@@ -1,0 +1,22 @@
+
+<h1>Task manager 1.0</h1>
+
+<h2>List your tasks here</h2>
+
+
+
+
+
+
+<% @tasks.each do |task| %>
+  <h2><%= task.name %></h2>
+  <p><%= task.value %></p>
+  <%= link_to task.name, task_path(task) %>
+
+
+  <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
